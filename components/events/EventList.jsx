@@ -1,16 +1,21 @@
 import React from 'react'
 import EventItem from './EventItem';
+import classes from './eventList.module.css'
 
 const EventList = ({ items }) => {
   return (
-    <div>
-      <h2>Event List</h2>
-      <ul>
-        {items.map(event => {
-          <li></li>
-        })}
-      </ul>
-    </div>
+    <ul className={classes.list}>
+      {items.map(event => {
+        <EventItem
+          key={event.id}
+          id={event.id}
+          title={event.title}
+          location={event.location}
+          date={event.date}
+          image={event.image}
+        />
+      })}
+    </ul>
   )
 }
 
