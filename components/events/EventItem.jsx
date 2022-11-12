@@ -4,7 +4,7 @@ import classes from './eventItem.module.css'
 
 const EventItem = ({ title, image, date, location, id }) => {
 
-  const humanReadableDate = new Data(date).toLocaleDateString("en-US", {
+  const humanReadableDate = new Date(date).toLocaleDateString("en-US", {
     day: "numeric",
     month: "long",
     year: "numeric",
@@ -16,8 +16,7 @@ const EventItem = ({ title, image, date, location, id }) => {
 
   return (
     <li className={classes.item}>
-    hi
-      {/* <img src={"/" + image} alt={title} />
+      <img src={"/" + image} alt={title} />
       <div className={classes.content}>
         <div className={classes.summary}>
           <h2>{title}</h2>
@@ -31,7 +30,7 @@ const EventItem = ({ title, image, date, location, id }) => {
         <div className={classes.actions}>
           <Link href={exploreLink}>Explore Event</Link>
         </div>
-      </div> */}
+      </div>
     </li>
   )
 }
